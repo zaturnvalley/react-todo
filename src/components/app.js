@@ -13,11 +13,18 @@ const todos = [
 ]
 
 export default class App extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      todos //this is for ES6, for not es6, do todos: todos
+    };
+  }
   render() {
     return (
       <div>
-        <h1>React ToDo App</h1>
-        <TodosList />
+        <h1>React To Do App</h1>
+        <TodosList todos={this.state.todos}/>
       </div>
     );
   }
