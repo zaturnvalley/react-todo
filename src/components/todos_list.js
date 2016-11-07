@@ -1,6 +1,7 @@
 import _ from 'lodash';
 import React from 'react';
 import TodosListHeader from './todos_list_header';
+import TodosListItem from './todos_list_item';
 
 export default class TodosList extends React.Component {
   renderItems(){
@@ -11,9 +12,9 @@ export default class TodosList extends React.Component {
     return (
       <table className="table table-striped">
         <TodosListHeader />
-        <tr>
+        <tbody>
           {this.renderItems()}
-        </tr>
+        </tbody>
       </table>
       );
   }
