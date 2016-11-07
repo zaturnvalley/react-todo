@@ -5,7 +5,9 @@ export default class CreateToDo extends React.Component {
     return (
       <form className='form-group'>
         <input  className="form-control" type="text" placeholder="What do I need to do?" />
-        <button className="btn btn-info">Create</button>
+        <span className="input-group-btn">
+          <button className="btn btn-info">Create</button>
+        </span>
       </form>
       );
   }
