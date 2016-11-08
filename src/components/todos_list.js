@@ -5,8 +5,9 @@ import TodosListItem from './todos_list_item';
 
 export default class TodosList extends React.Component {
   renderItems(){
+    const props = _.omit(this.props, 'todos');
     return _.map(this.props.todos, (todo, index) => <TodosListItem key={index
-      } {...todo} />);
+      } {...todo} {...props} />);
   }
   render(){
     return (

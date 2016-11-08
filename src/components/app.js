@@ -36,7 +36,7 @@ export default class App extends React.Component {
 
   toggleTask(task) {
     const foundToDo = _.find(this.state.todos, todo => todo.task === task);
-    foundTodo.isCompleted = !foundTodo.isCompleted;
+    foundToDo.isCompleted = !foundToDo.isCompleted;
     this.setState({ todos: this.state.todos });
   }
   createTask(task) {
