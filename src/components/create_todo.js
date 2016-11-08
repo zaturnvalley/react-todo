@@ -36,15 +36,15 @@ export default class TodosList extends React.Component {
       return;
     }
 
-    this.setState({ error: null});
+    this.setState({ error: null });
     this.props.createTask(task);
     this.refs.createInput.value = '';
   }
 
   validateInput(task){
     if (!task) {
-      return 'Please Input a Task';
-    } else if (_.find(this.props, todo => todo.task === task)) {
+      return 'Please Input A Task';
+    } else if (_.find(this.props.todo, todo => todo.task === task)) {
       return 'Task Already exists'
     } else {
       return null;
