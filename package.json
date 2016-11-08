@@ -18,7 +18,10 @@
   },
   "homepage": "https://github.com/zaturnvalley/react-todo#readme",
   "dependencies": {
+    "gulp-concat": "^2.6.0",
     "lodash": "^4.16.6",
+    "merge": "^1.2.0",
+    "path": "^0.12.7",
     "react": "^15.3.2",
     "react-dom": "^15.3.2"
   },
