@@ -43,7 +43,7 @@ export default class TodosListItem extends React.Component {
     } return (
         <td>
           <button onClick={this.onEditClick.bind(this)} className="btn btn-warning">Edit</button>
-          <button className="btn btn-danger">Delete</button>
+          <button onClick={this.props.deleteTask.bind(this, this.props.task)} className="btn btn-danger">Delete</button>
         </td>
       );
   }
