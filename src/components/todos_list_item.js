@@ -14,6 +14,15 @@ export default class TodosListItem extends React.Component {
     const taskStyle = {
       color: isCompleted ? 'green' : 'red',
       cursor: 'pointer'
+    };
+    if (this.state.isEditing) {
+      return (
+        <td>
+        <form onSubmit={this.onSaveClick.bind(this)}>
+          <input type="text" defaultValue={task} ref="editInput" />
+        </form>
+        </td>
+        );
     }
     return (
         <td style={taskStyle}
@@ -27,7 +36,7 @@ export default class TodosListItem extends React.Component {
     if (this.state.isEditing) {
       return (
         <td>
-          <button className="btn btn-warning">Save</button>
+          <button onClick={this.onSaveClick.bind(this)} className="btn btn-warning">Save</button>
           <button onClick={this.onCancelClick.bind(this)} className="btn btn-danger">Cancel</button>
         </td>
         );
@@ -52,5 +61,12 @@ export default class TodosListItem extends React.Component {
   }
   onCancelClick(){
     this.setState({ isEditing: false});
+  }
+  onSaveClick(e){
+    e.preventDefault();
+    const oldTask = this.props.task;
+    const newTask = this.refs.editInput.value;
+    this.props.saveTask(oldTask, newTask);
+    this.setState({ isEditing: false });
   }
 }
