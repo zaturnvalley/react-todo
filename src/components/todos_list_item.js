@@ -56,12 +56,15 @@ export default class TodosListItem extends React.Component {
         </tr>
       );
   }
+
   onEditClick() {
     this.setState({ isEditing: true });
   }
+
   onCancelClick(){
     this.setState({ isEditing: false});
   }
+
   onSaveClick(e){
     e.preventDefault();
     const oldTask = this.props.task;
